@@ -15,7 +15,7 @@ class FactoryApi(Api,
         components = snake_str.split('_')
         return components[0] + ''.join(x.title() for x in components[1:])
 
-    def _to_api(self, data: dict | list) -> dict | list:
+    def _to_api(self, data):
         _data = None
         if isinstance(data, dict):
             _data = dict()
