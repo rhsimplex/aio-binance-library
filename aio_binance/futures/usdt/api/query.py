@@ -45,7 +45,7 @@ class Api:
         cls.SHIFT_SECONDS = seconds
 
     @classmethod
-    async def __check_response(cls, json_wrapper: dict | list) -> None:
+    async def __check_response(cls, json_wrapper) -> None:
         code = 200
         msg = ""
         if isinstance(json_wrapper, list):
