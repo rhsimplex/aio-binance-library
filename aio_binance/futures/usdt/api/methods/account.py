@@ -252,7 +252,7 @@ class Account:
 
     async def get_private_order(self,
                                 symbol: str,
-                                order_id: int | str) -> dict:
+                                order_id: int) -> dict:
         """**Query Order (USER_DATA)**
             Check an order's status
         Notes:
