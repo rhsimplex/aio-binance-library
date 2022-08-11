@@ -4,7 +4,7 @@ class Streams:
 
     async def stream_agg_trade(self,
                                symbol: str,
-                               callback_event: object = None) -> str | dict:
+                               callback_event: object = None):
         """**Aggregate Trade Streams**
             The Aggregate Trade Streams push market trade information
             that is aggregated for a single taker order every 100 milliseconds.
@@ -31,7 +31,7 @@ class Streams:
 
     async def stream_mark_price(self,
                                 symbol: str,
-                                callback_event: object = None) -> str | dict:
+                                callback_event: object = None):
         """**Mark Price Streams**
             Mark price and funding rate for all symbols pushed every 3 seconds or every second.
         **Stream Name:**
@@ -53,7 +53,7 @@ class Streams:
     async def stream_kline(self,
                            symbol: str,
                            interval: str,
-                           callback_event: object = None) -> str | dict:
+                           callback_event: object = None):
         """**Kline/Candlestick Streams**
             The Kline/Candlestick Stream push updates to the current klines/candlestick
             every 250 milliseconds (if existing)
@@ -97,7 +97,7 @@ class Streams:
                                       symbol: str,
                                       contract_type: str,
                                       interval: str,
-                                      callback_event: object = None) -> str | dict:
+                                      callback_event: object = None):
         """**Continuous Kline/Candlestick Streams**
             The Kline/Candlestick Stream push updates to Kline/candlestick bars for a specific contract type.
             every 250 milliseconds
@@ -140,7 +140,7 @@ class Streams:
 
     async def stream_mini_ticker(self,
                                  symbol: str = None,
-                                 callback_event: object = None) -> str | dict:
+                                 callback_event: object = None):
         """**Individual symbol or all symbols mini ticker**
             24hr rolling window mini-ticker statistics.
             These are NOT the statistics of the UTC day, but a 24hr rolling window for the previous 24hrs
@@ -167,7 +167,7 @@ class Streams:
 
     async def stream_ticker(self,
                             symbol=None,
-                            callback_event: object = None) -> str | dict:
+                            callback_event: object = None):
         """**Individual symbol or all symbols ticker**
             24hr rolling window ticker statistics for a single symbol.
 
@@ -195,7 +195,7 @@ class Streams:
 
     async def stream_book_ticker(self,
                                  symbol=None,
-                                 callback_event: object = None) -> str | dict:
+                                 callback_event: object = None):
         """**Individual symbol or all book ticker**
             Pushes any update to the best bid or asks price or quantity in real-time for a specified symbol.
         **Stream Name:**
@@ -221,7 +221,7 @@ class Streams:
 
     async def stream_liquidation_order(self,
                                        symbol=None,
-                                       callback_event: object = None) -> str | dict:
+                                       callback_event: object = None):
         """**The Liquidation Order Snapshot Streams push force liquidation order information for specific symbol.**
             The Liquidation Order Snapshot Streams push force
             liquidation order information for all symbols in the market.
@@ -255,7 +255,7 @@ class Streams:
                                         symbol: str,
                                         level: int = 5,
                                         speed: int = 500,
-                                        callback_event: object = None) -> str | dict:
+                                        callback_event: object = None):
         """**Partial Book Depth Streams**
             Top bids and asks,
         **Stream Names:**
@@ -279,7 +279,7 @@ class Streams:
     async def stream_diff_book_depth(self,
                                      symbol: str,
                                      speed: int = 500,
-                                     callback_event: object = None) -> str | dict:
+                                     callback_event: object = None):
         """**Diff. Depth Stream**
             Order book price and quantity depth updates used to locally manage an order book.
         **Stream Name:**
@@ -301,7 +301,7 @@ class Streams:
 
     async def stream_blvt_info(self,
                                symbol: str,
-                               callback_event: object = None) -> str | dict:
+                               callback_event: object = None):
         """**Blvt Info Stream**
             Get leverage token info
         **Stream Name:**
@@ -323,7 +323,7 @@ class Streams:
     async def stream_blvt_kline(self,
                                 symbol: str,
                                 interval: str,
-                                callback_event: object = None) -> str | dict:
+                                callback_event: object = None):
         """**BLVT Kline/Candlestick Streams**
             The Kline/Candlestick Stream push updates to the current
             klines/candlestick every 300 milliseconds (if existing)
@@ -365,7 +365,7 @@ class Streams:
 
     async def stream_composite_index(self,
                                      symbol: str,
-                                     callback_event: object = None) -> str | dict:
+                                     callback_event: object = None):
         """**Composite Index Info Stream**
             Composite index information for index symbols pushed every second.
         **Stream Name:**
@@ -386,7 +386,7 @@ class Streams:
             return stream
         await self._listen_forever(stream, callback_event)
 
-    async def stream_user_data(self, callback_event: object = None) -> str | dict:
+    async def stream_user_data(self, callback_event: object = None):
         """**listen to user data by provided listen key**
 
         See Also:
