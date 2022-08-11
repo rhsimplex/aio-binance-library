@@ -275,7 +275,7 @@ class Account:
 
     async def delete_private_order(self,
                                    symbol: str,
-                                   order_id: int | str) -> dict:
+                                   order_id) -> dict:
         """**Cancel Order (TRADE)**
             Cancel an active order.
         Notes:
@@ -316,7 +316,7 @@ class Account:
 
     async def delete_private_batch_order(self,
                                          symbol: str,
-                                         order_id_list: list[int | str]) -> dict:
+                                         order_id_list) -> dict:
         """**Cancel Multiple Orders (TRADE)**
             Cancel a new batch order*
         Notes:
@@ -376,7 +376,7 @@ class Account:
 
     async def get_private_open_order(self,
                                      symbol: str,
-                                     order_id: int | str) -> dict:
+                                     order_id) -> dict:
         """**Query Current Open Order (USER_DATA)**
             Get all open orders on a symbol.*
         Notes:
